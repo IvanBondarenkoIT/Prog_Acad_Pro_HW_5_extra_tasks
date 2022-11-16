@@ -28,9 +28,9 @@ import text_file_handler
 
 def main():
     txt_proc = text_file_handler.TxtProcessor()
-    _list = txt_proc.count_ch()
-    print(_list)
-
+    print(f'Sentences - {len(txt_proc.count_sent())}')
+    print(f'Words - {len(txt_proc.count_word())}')
+    print(f'Chars - {len(txt_proc.count_char())}')
 
 
 if __name__ == "__main__":
