@@ -1,5 +1,4 @@
-"""Також, надсилаю додаткові завдання:
-
+"""
 1. Create a class that performs statistical processing of a text file - counting characters, words,
  sentences, etc. Determine the required attributes-data and attributes-methods in class for
  working with the text file.
@@ -24,13 +23,36 @@ All tickets must have the following properties:
  Also, customers can add extra ingredients to the pizza-of-the-day.
  Write a program that will form orders from customers."""
 import text_file_handler
+import tickets
 
 
 def main():
+
+    # Text File
     txt_proc = text_file_handler.TxtProcessor()
     print(f'Sentences - {len(txt_proc.count_sent())}')
     print(f'Words - {len(txt_proc.count_word())}')
     print(f'Chars - {len(txt_proc.count_char())}')
+
+    # Tickets
+    kass = tickets.Tickets()
+
+    kass.add_ticket(tickets.Ticket(12301, "advance"))
+    kass.add_ticket(tickets.Ticket(12302, "advance"))
+    kass.add_ticket(tickets.Ticket(12303, "advance"))
+    kass.add_ticket(tickets.Ticket(12304, "regular"))
+    kass.add_ticket(tickets.Ticket(12305, "regular"))
+    kass.add_ticket(tickets.Ticket(12306, "regular"))
+    kass.add_ticket(tickets.Ticket(12307, "student"))
+    kass.add_ticket(tickets.Ticket(12308, "student"))
+    kass.add_ticket(tickets.Ticket(12309, "late"))
+    # kass.add_ticket(tickets.Ticket(12309, "late")) # KeyError
+    # kass.add_ticket(tickets.Ticket("12309", "late")) # TypeError
+    tic = kass.get_by_number(12301)
+    print(f"Ticket{tic.number} have a price {tic.get_price()}")
+
+    for i in kass:
+        print(i)
 
 
 if __name__ == "__main__":
