@@ -30,9 +30,8 @@ def main():
 
     # Text File
     txt_proc = text_file_handler.TxtProcessor()
-    print(f'Sentences - {len(txt_proc.count_sent())}')
-    print(f'Words - {len(txt_proc.count_word())}')
-    print(f'Chars - {len(txt_proc.count_char())}')
+    print(f'Sentences - {txt_proc.sentences}, Words - {txt_proc.words}, Chars - {txt_proc.characters}')
+
 
     # Tickets
     kass = tickets.Tickets()
