@@ -23,6 +23,7 @@ All tickets must have the following properties:
  Also, customers can add extra ingredients to the pizza-of-the-day.
  Write a program that will form orders from customers."""
 import text_file_handler
+import datetime
 import tickets
 from pizzeria import Menu
 
@@ -35,42 +36,31 @@ def main():
 
 
     # Tickets
-    kass = tickets.Tickets()
-
-    kass.add_ticket(tickets.Ticket(12301, "advance"))
-    kass.add_ticket(tickets.Ticket(12302, "advance"))
-    kass.add_ticket(tickets.Ticket(12303, "advance"))
-    kass.add_ticket(tickets.Ticket(12304, "regular"))
-    kass.add_ticket(tickets.Ticket(12305, "regular"))
-    kass.add_ticket(tickets.Ticket(12306, "regular"))
-    kass.add_ticket(tickets.Ticket(12307, "student"))
-    kass.add_ticket(tickets.Ticket(12308, "student"))
-    kass.add_ticket(tickets.Ticket(12309, "late"))
-    # kass.add_ticket(tickets.Ticket(12309, "late")) # KeyError
-    # kass.add_ticket(tickets.Ticket("12309", "late")) # TypeError
-    tic = kass.get_by_number(12301)
-    print(f"Ticket{tic.number} have a price {tic.get_price()}")
-
-    for i in kass:
-        print(i)
+    # kass = tickets.Tickets()
+    #
+    # kass.add_ticket(tickets.Ticket(12301, "advance"))
+    # kass.add_ticket(tickets.Ticket(12302, "advance"))
+    # kass.add_ticket(tickets.Ticket(12303, "advance"))
+    # kass.add_ticket(tickets.Ticket(12304, "regular"))
+    # kass.add_ticket(tickets.Ticket(12305, "regular"))
+    # kass.add_ticket(tickets.Ticket(12306, "regular"))
+    # kass.add_ticket(tickets.Ticket(12307, "student"))
+    # kass.add_ticket(tickets.Ticket(12308, "student"))
+    # kass.add_ticket(tickets.Ticket(12309, "late"))
+    # # kass.add_ticket(tickets.Ticket(12309, "late")) # KeyError
+    # # kass.add_ticket(tickets.Ticket("12309", "late")) # TypeError
+    # tic = kass.get_by_number(12301)
+    # print(f"Ticket{tic.number} have a price {tic.get_price()}")
+    #
+    # for i in kass:
+    #     print(i)
 
     # Pizzeria
+    today = datetime.date.today()
+    week_day = today.weekday()
 
     menu = Menu()
-
-    menu.add_pizza_to_menu("pizza1", 'min', 10, 1)
-    menu.add_pizza_to_menu("pizza2", 'min', 11, 2)
-    menu.add_pizza_to_menu("pizza3", 'min', 12, 3)
-    menu.add_pizza_to_menu("pizza4", 'min', 13, 4)
-    menu.add_pizza_to_menu("pizza5", 'min', 14, 5)
-    menu.add_pizza_to_menu("pizza6", 'min', 15, 6)
-    menu.add_pizza_to_menu("pizza7", 'min', 16, 7)
-
-    week_day = 1
-    #user_answer = input(f"{menu.find_by_day(week_day)}")
-
-    print(menu.find_by_day(2))
-    print(menu.find_by_day(3))
+    menu.make_order(week_day)
 
 
 if __name__ == "__main__":
