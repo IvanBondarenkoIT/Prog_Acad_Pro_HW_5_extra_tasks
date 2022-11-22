@@ -31,29 +31,29 @@ from pizzeria import Menu
 def main():
 
     # Text File
-    # txt_proc = text_file_handler.TxtProcessor()
-    # print(f'Sentences - {txt_proc.sentences}, Words - {txt_proc.words}, Chars - {txt_proc.characters}')
+    txt_proc = text_file_handler.TxtProcessor()
+    print(f'Sentences - {txt_proc.sentences}, Words - {txt_proc.words}, Chars - {txt_proc.characters}')
 
 
     # Tickets
-    # kass = tickets.Tickets()
-    #
-    # kass.add_ticket(tickets.Ticket(12301, "advance"))
-    # kass.add_ticket(tickets.Ticket(12302, "advance"))
-    # kass.add_ticket(tickets.Ticket(12303, "advance"))
-    # kass.add_ticket(tickets.Ticket(12304, "regular"))
-    # kass.add_ticket(tickets.Ticket(12305, "regular"))
-    # kass.add_ticket(tickets.Ticket(12306, "regular"))
-    # kass.add_ticket(tickets.Ticket(12307, "student"))
-    # kass.add_ticket(tickets.Ticket(12308, "student"))
-    # kass.add_ticket(tickets.Ticket(12309, "late"))
-    # # kass.add_ticket(tickets.Ticket(12309, "late")) # KeyError
-    # # kass.add_ticket(tickets.Ticket("12309", "late")) # TypeError
-    # tic = kass.get_by_number(12301)
-    # print(f"Ticket{tic.number} have a price {tic.get_price()}")
-    #
-    # for i in kass:
-    #     print(i)
+    kass = tickets.Tickets()
+
+    kass.add_ticket(tickets.Ticket(12301, "advance"))
+    kass.add_ticket(tickets.Ticket(12302, "advance"))
+    kass.add_ticket(tickets.Ticket(12303, "advance"))
+    kass.add_ticket(tickets.Ticket(12304, "regular"))
+    kass.add_ticket(tickets.Ticket(12305, "regular"))
+    kass.add_ticket(tickets.Ticket(12306, "regular"))
+    kass.add_ticket(tickets.Ticket(12307, "student"))
+    kass.add_ticket(tickets.Ticket(12308, "student"))
+    kass.add_ticket(tickets.Ticket(12309, "late"))
+    # kass.add_ticket(tickets.Ticket(12309, "late")) # KeyError
+    # kass.add_ticket(tickets.Ticket("12309", "late")) # TypeError
+    tic = kass.get_by_number(12301)
+    print(f"Ticket{tic.number} have a price {tic.get_price()}")
+
+    for i in kass:
+        print(i)
 
     # Pizzeria
     today = datetime.date.today()

@@ -1,4 +1,4 @@
-GREETING = "Welcome to our pizzeria!\nToday we have pizza of the day - "
+GREETING = "Welcome to our pizzeria!!!\nToday we have pizza of the day - "
 
 
 class Order:
