@@ -24,13 +24,14 @@ All tickets must have the following properties:
  Write a program that will form orders from customers."""
 import text_file_handler
 import tickets
+from pizzeria import Menu
 
 
 def main():
 
     # Text File
-    txt_proc = text_file_handler.TxtProcessor()
-    print(f'Sentences - {txt_proc.sentences}, Words - {txt_proc.words}, Chars - {txt_proc.characters}')
+    # txt_proc = text_file_handler.TxtProcessor()
+    # print(f'Sentences - {txt_proc.sentences}, Words - {txt_proc.words}, Chars - {txt_proc.characters}')
 
 
     # Tickets
@@ -52,6 +53,24 @@ def main():
 
     for i in kass:
         print(i)
+
+    # Pizzeria
+
+    menu = Menu()
+
+    menu.add_pizza_to_menu("pizza1", 'min', 10, 1)
+    menu.add_pizza_to_menu("pizza2", 'min', 11, 2)
+    menu.add_pizza_to_menu("pizza3", 'min', 12, 3)
+    menu.add_pizza_to_menu("pizza4", 'min', 13, 4)
+    menu.add_pizza_to_menu("pizza5", 'min', 14, 5)
+    menu.add_pizza_to_menu("pizza6", 'min', 15, 6)
+    menu.add_pizza_to_menu("pizza7", 'min', 16, 7)
+
+    week_day = 1
+    #user_answer = input(f"{menu.find_by_day(week_day)}")
+
+    print(menu.find_by_day(2))
+    print(menu.find_by_day(3))
 
 
 if __name__ == "__main__":
